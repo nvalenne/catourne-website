@@ -21,13 +21,18 @@ export default {
 
 <style>
   #app {
+    color: white;
+    font-family: "Climate Crisis", "sans-serif";
     display: flex;
     flex-flow: column wrap;
-    overflow: hidden;
     width: 100%;
   }
   body {
     max-width: 100%;
     margin: 0;
+    overflow-x: hidden;
+  }
+  html {
+    background: black;
   }
 </style>

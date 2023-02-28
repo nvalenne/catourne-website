@@ -25,7 +25,6 @@ export default {
   .navbar {
     background: black;
     height: 80px;
-    font-family: "Climate Crisis", "sans-serif";
     width: 100%;
   }
 
@@ -37,7 +36,6 @@ export default {
   }
   .navbar-list li {
     margin: 0 10px 0 10px;
-    color: white;
     font-size: 24px;
   }
   a {
