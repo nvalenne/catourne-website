@@ -18,10 +18,10 @@
       </select>
     </div>
     <div v-if="!canBeGenerated">
-      <button class="btn-generate" v-if="model_selected && music_selected && !canBeGenerated" @click="changeStateGeneration">Generate</button>
+      <button class="btn-generate" v-if="model_selected && music_selected && !canBeGenerated" @click="generate">Generate</button>
     </div>
     <div v-else>
-      <button class="btn-generate" v-if="canBeGenerated" @click="changeStateGeneration">Back</button>
+      <button class="btn-generate" v-if="canBeGenerated" @click="stop">Back</button>
     </div>
     <Renderer3D :modele="model_selected" v-if="canBeGenerated" />
     <a href="https://marrantmaispastrop.fun/feur" target="_blank" style="text-decoration: none;color: black">
@@ -42,6 +42,7 @@ import Renderer3D from "@/components/Renderer3D.vue";
       return {
         music_selected : '',
         model_selected : '',
+        music_playing : null,
         canBeGenerated : false
       }
     },
@@ -52,11 +53,16 @@ import Renderer3D from "@/components/Renderer3D.vue";
         this.music_playing.loop = true;
       },
       stopMusic(){
-        this.music_playing.stop();
+        this.music_playing.pause();
       },
-      changeStateGeneration(){
+      generate(){
         this.canBeGenerated=!this.canBeGenerated;
+        this.playMusic()
       },
+      stop(){
+        this.canBeGenerated=!this.canBeGenerated;
+        this.stopMusic();
+      }
     }
   }
 </script>
