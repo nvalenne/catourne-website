@@ -24,7 +24,6 @@ export default {
 
   .navbar {
     background: black;
-    height: 80px;
     width: 100%;
   }
 
@@ -33,6 +32,7 @@ export default {
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    margin: 10px 0 13px 0;
   }
   .navbar-list li {
     margin: 0 10px 0 10px;

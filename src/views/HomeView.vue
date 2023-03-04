@@ -1,25 +1,31 @@
 <template>
   <div class="main-container">
     <div>
-      <select class="select_models models" v-model="model_selected" >
-        <optgroup label="Modèles">
-          <option value="capybara">Capybara</option>
-          <option value="maxwell">Maxwell dance</option>
-          <option value="floppa_cube">Floppa</option>
-          <option value="el_gato">El Gato</option>
-          <option value="gangnam_style">Gangnam Style</option>
-          <option value="shrek">Shrek</option>
-          <option value="steve">Steve</option>
-        </optgroup>
-      </select>
-      <select class="select_models musics" v-model="music_selected" @change="changeMusic()">
-        <optgroup label="Musiques">
-          <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
-          <option value="ok_i_pull_up">Ok I Pull Up</option>
-        </optgroup>
-      </select>
+      <div style="margin-bottom: 5px;">
+        <label for="models">Modèles</label>
+        <select id="models" v-model="model_selected" >
+          <optgroup label="Modèles">
+            <option value="capybara">Capybara</option>
+            <option value="maxwell">Maxwell dance</option>
+            <option value="floppa_cube">Floppa</option>
+            <option value="el_gato">El Gato</option>
+            <option value="gangnam_style">Gangnam Style</option>
+            <option value="shrek">Shrek</option>
+            <option value="steve">Steve</option>
+          </optgroup>
+        </select>
+      </div>
+      <div v-if="model_selected" style="margin-bottom: 5px;">
+        <label for="musics">Musiques</label>
+        <select id="musics" v-model="music_selected" @change="changeMusic()">
+          <optgroup label="Musiques">
+            <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
+            <option value="ok_i_pull_up">Ok I Pull Up</option>
+          </optgroup>
+        </select>
+      </div>
     </div>
-    <div>
+    <div v-if="model_selected">
       <span class="partyText">PARTY MODE</span>
       <input type="checkbox" id="check_party_mode" @click="party_mode()">
     </div>
@@ -78,8 +84,8 @@ import Renderer3D from "@/components/Renderer3D.vue";
     align-items: center;
     justify-content: center;
   }
-  .musics, .models {
-    margin: 10px;
+  #musics, #models {
+    margin: 5px 10px 0 5px;
     background: black;
     color: white;
     height: 35px;
@@ -91,9 +97,6 @@ import Renderer3D from "@/components/Renderer3D.vue";
     animation-name: button_party_mode;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-  }
-  .check_party_mode {
-    width: 25px;
   }
 
   @keyframes button_party_mode {

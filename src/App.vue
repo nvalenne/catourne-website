@@ -1,13 +1,17 @@
 <template>
   <div id="app">
+    <NavBar/>
       <router-view/>
   </div>
 </template>
 
 <script>
 
+import NavBar from "@/components/NavBar.vue";
+
 export default {
   name: 'App',
+  components: {NavBar},
 
   data: () => ({
     //
@@ -18,7 +22,7 @@ export default {
 <style>
   #app {
     color: white;
-    font-family: "Climate Crisis", "sans-serif";
+    font-family: "Press Start 2P", "sans-serif";
     display: flex;
     flex-flow: column wrap;
     width: 100%;
