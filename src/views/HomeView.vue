@@ -1,38 +1,44 @@
 <template>
-  <div class="main-container">
-    <div>
-      <div style="margin-bottom: 5px;">
-        <label for="models">Modèles</label>
-        <select id="models" v-model="model_selected" >
-          <optgroup label="Modèles">
-            <option value="capybara">Capybara</option>
-            <option value="maxwell">Maxwell dance</option>
-            <option value="floppa_cube">Floppa</option>
-            <option value="el_gato">El Gato</option>
-            <option value="gangnam_style">Gangnam Style</option>
-            <option value="shrek">Shrek</option>
-            <option value="steve">Steve</option>
-          </optgroup>
-        </select>
+  <div>
+    <div class="main-container">
+      <div class="container-options">
+        <div>
+          <div class="container-select">
+            <label for="models">Modèles</label>
+            <select id="models" v-model="model_selected" >
+              <optgroup label="Modèles">
+                <option value="capybara">Capybara</option>
+                <option value="maxwell">Maxwell dance</option>
+                <option value="floppa_cube">Floppa</option>
+                <option value="el_gato">El Gato</option>
+                <option value="gangnam_style">Gangnam Style</option>
+                <option value="shrek">Shrek</option>
+                <option value="steve">Steve</option>
+              </optgroup>
+            </select>
+          </div>
+          <div v-if="model_selected" class="container-select">
+            <label for="musics">Musiques</label>
+            <select id="musics" v-model="music_selected" @change="changeMusic(music_selected)">
+              <optgroup label="Musiques">
+                <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
+                <option value="ok_i_pull_up">Ok I Pull Up</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div v-if="model_selected">
+          <label for="check_party_mode" class="partyText">PARTY MODE</label>
+          <input type="checkbox" id="check_party_mode" @click="party_mode()">
+        </div>
       </div>
-      <div v-if="model_selected" style="margin-bottom: 5px;">
-        <label for="musics">Musiques</label>
-        <select id="musics" v-model="music_selected" @change="changeMusic(music_selected)">
-          <optgroup label="Musiques">
-            <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
-            <option value="ok_i_pull_up">Ok I Pull Up</option>
-          </optgroup>
-        </select>
-      </div>
+      <Renderer3D :modele="model_selected" v-if="model_selected" />
     </div>
-    <div v-if="model_selected">
-      <span class="partyText">PARTY MODE</span>
-      <input type="checkbox" id="check_party_mode" @click="party_mode()">
+    <div style="display: flex;justify-content: flex-end">
+      <a href="https://marrantmaispastrop.fun/feur" target="_blank" style="text-decoration: none;color: black;">
+        quoi
+      </a>
     </div>
-    <Renderer3D :modele="model_selected" v-if="model_selected" />
-    <a href="https://marrantmaispastrop.fun/feur" target="_blank" style="text-decoration: none;color: black">
-      quoi
-    </a>
   </div>
 </template>
 
@@ -85,9 +91,17 @@ let interval;
 </script>
 
 <style scoped>
-  .main-container {
+  .main-container, .container-options {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-select{
+    margin-bottom: 5px;
+    display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
   }
@@ -104,6 +118,12 @@ let interval;
     animation-name: button_party_mode;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+  }
+  #check_party_mode {
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid white;
+    border-radius: 0.1em;
   }
 
   @keyframes button_party_mode {

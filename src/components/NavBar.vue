@@ -24,12 +24,11 @@ export default {
 
   .navbar {
     background: black;
-    width: 100%;
   }
 
   .navbar-list {
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap row;
     align-content: center;
     justify-content: center;
     margin: 10px 0 13px 0;
