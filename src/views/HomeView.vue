@@ -8,11 +8,10 @@
             <select id="models" v-model="model_selected" >
               <optgroup label="Modèles">
                 <option value="capybara">Capybara</option>
-                <option value="maxwell">Maxwell dance</option>
+                <option value="maxwell">Maxwell</option>
                 <option value="floppa_cube">Floppa</option>
                 <option value="el_gato">El Gato</option>
                 <option value="gangnam_style">Gangnam Style</option>
-                <option value="shrek">Shrek</option>
                 <option value="steve">Steve</option>
               </optgroup>
             </select>
@@ -23,6 +22,7 @@
               <optgroup label="Musiques">
                 <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
                 <option value="ok_i_pull_up">Ok I Pull Up</option>
+                <option value="you_spin_me_right_round">You spin me right round</option>
               </optgroup>
             </select>
           </div>
@@ -34,6 +34,7 @@
       </div>
       <Renderer3D :modele="model_selected" v-if="model_selected" />
     </div>
+
     <div style="display: flex;justify-content: flex-end">
       <a href="https://marrantmaispastrop.fun/feur" target="_blank" style="text-decoration: none;color: black;">
         quoi
@@ -113,6 +114,7 @@ let interval;
     font-size: 16px;
     border: white 2px solid;
     border-radius: 8px;
+    width: 150px;
   }
   .partyText {
     animation-name: button_party_mode;
