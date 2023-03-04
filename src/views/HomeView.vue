@@ -17,7 +17,7 @@
       </div>
       <div v-if="model_selected" style="margin-bottom: 5px;">
         <label for="musics">Musiques</label>
-        <select id="musics" v-model="music_selected" @change="changeMusic()">
+        <select id="musics" v-model="music_selected" @change="changeMusic(music_selected)">
           <optgroup label="Musiques">
             <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
             <option value="ok_i_pull_up">Ok I Pull Up</option>
@@ -40,6 +40,7 @@
 <script>
 
 import Renderer3D from "@/components/Renderer3D.vue";
+let interval;
   export default {
     name: 'HomeView',
 
@@ -57,19 +58,25 @@ import Renderer3D from "@/components/Renderer3D.vue";
       stopMusic(){
         this.music_playing.pause();
       },
-      changeMusic(){
+      changeMusic(music){
         if (this.music_playing)
           this.stopMusic();
 
-        this.music_playing = new Audio(`./musics/${this.music_selected}.mp3`)
+        this.music_playing = new Audio(`./musics/${music}.mp3`)
         this.music_playing.play();
         this.music_playing.loop = true;
       },
       party_mode(){
           //this.is_party_mode = document.getElementById("check_party_mode").checked;
         if (document.getElementById("check_party_mode").checked){
-          document.documentElement.style.background = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`
+          interval = setInterval(() => {
+            document.documentElement.style.background = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`
+          }, 400)
+          this.changeMusic("caramelldansen")
         } else {
+          clearInterval(interval)
+          if (this.music_selected) this.changeMusic(this.music_selected)
+          else this.stopMusic()
           document.documentElement.style.background = "black"
         }
       }
