@@ -13,6 +13,7 @@
                 <option value="el_gato">El Gato</option>
                 <option value="gangnam_style">Gangnam Style</option>
                 <option value="steve">Steve</option>
+                <option value="shrek">Shrek</option>
               </optgroup>
             </select>
           </div>

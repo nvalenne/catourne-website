@@ -10,6 +10,7 @@
   import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
   let scene = new Three.Scene();
+  let id = null;
 
   export default {
     name: "Renderer3D",
@@ -69,23 +70,27 @@
         this.renderer = new Three.WebGLRenderer({alpha: true});
         this.renderer.setSize(window.innerWidth/1.3, window.innerHeight/1.3);
         container.appendChild(this.renderer.domElement);
-
+        scene.rotation.y = 0
       },
       animate: function() {
-        requestAnimationFrame(this.animate);
-        // Rotation animation
-        scene.rotation.y += 0.03;
+        id = requestAnimationFrame(this.animate);
+        scene.rotation.y += 0.03
+
         // Render the scene
         this.renderer.render(scene, this.camera);
       },
+      start(){
+        if (id != null)
+          cancelAnimationFrame(id)
+        this.init();
+        this.animate();
+      }
     },
     mounted() {
-      this.init();
-      this.animate();
+      this.start()
     },
     updated() {
-      this.init();
-      this.animate();
+      this.start()
     },
     props : {
       modele : String
