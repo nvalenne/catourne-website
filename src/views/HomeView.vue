@@ -77,12 +77,15 @@ let interval;
       party_mode(){
           //this.is_party_mode = document.getElementById("check_party_mode").checked;
         if (document.getElementById("check_party_mode").checked){
+          document.getElementById("musics").disabled = true;
           interval = setInterval(() => {
             document.documentElement.style.background = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`
           }, 400)
           this.changeMusic("caramelldansen")
+
         } else {
           clearInterval(interval)
+          document.getElementById("musics").disabled = false;
           if (this.music_selected) this.changeMusic(this.music_selected)
           else this.stopMusic()
           document.documentElement.style.background = "black"
@@ -127,6 +130,16 @@ let interval;
     height: 1.5em;
     border: 0.15em solid white;
     border-radius: 0.1em;
+  }
+  
+  @media screen and (min-width: 460px) {
+    #check_party_mode {
+      width: 2em;
+      height: 2em;
+    }
+    .partyText {
+      font-size: 24px;
+    }
   }
 
   @keyframes button_party_mode {
