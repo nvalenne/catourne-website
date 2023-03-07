@@ -33,7 +33,7 @@ export default {
     overflow-x: hidden;
   }
   html {
-    background: black;
+    background: #030304;
     animation-name: party_mode;
     animation-duration: 1s;
     animation-iteration-count: infinite;

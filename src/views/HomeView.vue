@@ -24,6 +24,7 @@
                 <option value="around_the_world">Around The World</option> <!-- c'est nous les daft punk -->
                 <option value="ok_i_pull_up">Ok I Pull Up</option>
                 <option value="you_spin_me_right_round">You spin me right round</option>
+                <option value="maxwell_theme">Maxwell theme</option>
               </optgroup>
             </select>
           </div>
@@ -41,6 +42,7 @@
         quoi
       </a>
     </div>
+    <div style="position: fixed;bottom: 0; margin-bottom: 10px">by Nathan V.</div>
   </div>
 </template>
 
