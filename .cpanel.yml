@@ -1,5 +1,14 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R public /home/eahg1672/public_html/marrantmaispastrop.fun/
+    - name: "Copy files to the server"
+      copy:
+        src: "/home/eahg1672/repositories/catourne-website/public"
+        dest: "/home/eahg1672/marrantmaispastrop.fun"
+        owner: "eahg1672"
+        group: "eahg1672"
+        mode: "0755"
+        recursive: true
+        force: true
+
 
