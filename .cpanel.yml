@@ -1,6 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/eahg1672/public_html/marrantmaispastrop.fun/
-    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R public /home/eahg1672/public_html/marrantmaispastrop.fun/
 
