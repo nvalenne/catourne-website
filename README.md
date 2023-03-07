@@ -1,4 +1,6 @@
 # Ca tourne
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)
 
 Ce projet a été réalisé en utilisant la librairie VueJS, ainsi que le framework ThreeJS, permettant d'utiliser et afficher des scènes 3D.
 
