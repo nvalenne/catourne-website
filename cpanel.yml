@@ -1,0 +1,7 @@
+# Path: cpanel.yml
+---
+deployment:
+  tasks:
+    - export DEPLOYMENT_PATH=/home/eahg1672/public_html/marrantmaispastrop
+    - ./npm install
+    - ./npm run build
