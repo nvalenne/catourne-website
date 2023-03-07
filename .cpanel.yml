@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - export DEPLOYPATH=/home/eahg1672/public_html/marrantmaispastrop.fun/
     - /opt/alt/alt-nodejs18/root/usr/bin/npm install
     - /opt/alt/alt-nodejs18/root/usr/bin/npm run build
-    - /bin/cp -rf dist/* /home/eahg1672/public_html/marrantmaispastrop/
+    - /bin/cp -rf dist/* /home/eahg1672/public_html/marrantmaispastrop.fun/
