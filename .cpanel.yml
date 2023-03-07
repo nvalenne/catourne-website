@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/eahg1672/public_html/marrantmaispastrop/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -r ./* $DEPLOYPATH
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp -R images $DEPLOYPATH
+
