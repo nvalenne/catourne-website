@@ -1,4 +1,9 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -r public /home/eahg1672/public_html/marrantmaispastrop
+    -cat << EOF >> ~/.bashrc
+    export PATH="\$PATH:/opt/alt/alt-nodejs12/root/usr/bin/"
+    EOF
+    source ~/.bashrc
+    - /bin/cp -r dist/* /home/eahg1672/public_html/marrantmaispastrop
+    - /bin/npm install
