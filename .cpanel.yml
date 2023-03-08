@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - /bin/cp -r dist/* /home/eahg1672/public_html/marrantmaispastrop
-    - /bin/npm install
+    - /opt/alt/alt-nodejs16/root/usr/bin/npm install
