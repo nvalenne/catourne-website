@@ -1,0 +1,11 @@
+Model Information:
+* title:	El Gato
+* source:	https://sketchfab.com/3d-models/el-gato-e2474248e97b49f9a2a753ff1b626cd6
+* author:	mohd.akmal.mahyudin (https://sketchfab.com/mohd.akmal.mahyudin)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "El Gato" (https://sketchfab.com/3d-models/el-gato-e2474248e97b49f9a2a753ff1b626cd6) by mohd.akmal.mahyudin (https://sketchfab.com/mohd.akmal.mahyudin) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
