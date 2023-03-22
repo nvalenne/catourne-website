@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkrotating_models_website"]=self["webpackChunkrotating_models_website"]||[]).push([[443],{414:function(t,e,n){n.r(e),n.d(e,{default:function(){return l}});var i=function(){var t=this;t._self._c;return t._m(0)},s=[function(){var t=this,e=t._self._c;return e("div",{staticClass:"main-container"},[e("div",[t._v("je sais pas quoi foutre ici")])])}],u=n(1),r={},a=(0,u.Z)(r,i,s,!1,null,null,null),l=a.exports}}]);
+//# sourceMappingURL=about.17dddc1c.js.map

@@ -20,6 +20,11 @@ export default {
 </script>
 
 <style>
+* {
+  margin : 0;
+  padding : 0;
+  text-decoration: none;
+}
   #app {
     color: white;
     font-family: "Press Start 2P", "sans-serif";
@@ -34,9 +39,6 @@ export default {
   }
   html {
     background: #030304;
-    animation-name: party_mode;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
   }
   /*
   @keyframes party_mode {
