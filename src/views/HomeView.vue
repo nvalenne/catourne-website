@@ -54,7 +54,8 @@
 
 import Renderer3D from "@/components/Renderer3D.vue";
 
-let interval;
+let intervalBg;
+let intervalVibr;
 
 export default {
   name: 'HomeView',
@@ -85,13 +86,17 @@ export default {
       //this.is_party_mode = document.getElementById("check_party_mode").checked;
       if (document.getElementById("check_party_mode").checked) {
         document.getElementById("musics").disabled = true;
-        interval = setInterval(() => {
+        intervalBg = setInterval(() => {
           document.documentElement.style.background = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
         }, 400)
         this.changeMusic("caramelldansen");
+        intervalVibr = setInterval(()=> {
+          navigator.vibrate(10);
+        }, 500)
 
       } else {
-        clearInterval(interval)
+        clearInterval(intervalBg)
+        clearInterval(intervalVibr)
         document.getElementById("musics").disabled = false;
         if (this.music_selected) this.changeMusic(this.music_selected)
         else this.stopMusic()
