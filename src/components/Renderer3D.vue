@@ -41,7 +41,7 @@
         //Create scene
         this.camera = new Three.PerspectiveCamera( 90, window.innerWidth / window.innerHeight );
         this.camera.position.set(0, 1, 1);
-        scene.add(new Three.AmbientLight(0xFFFFFF, 1.4));
+        scene.add(new Three.AmbientLight(0xFFFFFF, 1.7));
 
         //Instance GLTF Loader
         const loader = new GLTFLoader();
@@ -60,8 +60,8 @@
           let scale = 1/boundingBoxSize;
           model.userData.scale = scale;
           if ( modelName === "scrumaster"){
-            model.scale.set(0.8, 0.8, 0.8); // Modifie l'echelle du modèle
-            model.position.set(0,0.8,0); // Positionne modèle au 0,0,0
+            model.scale.set(0.8, 0.8, 0.8);
+            model.position.set(0,1,0);
           } else {
             model.scale.set(scale, scale, scale); // Modifie l'echelle du modèle
             model.position.set(0,0.6,0); // Positionne modèle au 0,0,0
