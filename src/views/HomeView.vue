@@ -11,10 +11,11 @@
                 <option value="el_gato">El Gato</option>
                 <option value="floppa_cube">Floppa</option>
                 <option value="fromage">Fromage du CROUS</option>
-                <option value="gangnam_style">Gangnam Style</option>
                 <option value="maxwell">Maxwell</option>
                 <option value="steve">Steve</option>
                 <option value="shrek">Shrek</option>
+                <option value="monde_des_bugs">bug</option>
+                <option value="scrumaster">Le Scrum Master</option>
               </optgroup>
             </select>
           </div>
@@ -40,7 +41,7 @@
     </div>
 
     <div style="display: flex;justify-content: flex-end">
-      <a href="https://marrantmaispastrop.fun/feur" target="_blank" style="text-decoration: none;color: black;">
+      <a href="https://feur.marrantmaispastrop.fun/" target="_blank" style="text-decoration: none;color: black;">
         quoi
       </a>
     </div>
@@ -94,7 +95,7 @@ export default {
         document.getElementById("musics").disabled = false;
         if (this.music_selected) this.changeMusic(this.music_selected)
         else this.stopMusic()
-        document.documentElement.style.background = "black"
+        document.documentElement.style.background = "#161617"
       }
     }
   }

@@ -38,7 +38,7 @@ export default {
     overflow-x: hidden;
   }
   html {
-    background: #030304;
+    background: #161617;
   }
   /*
   @keyframes party_mode {

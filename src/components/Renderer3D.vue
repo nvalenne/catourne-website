@@ -41,51 +41,37 @@
         //Create scene
         this.camera = new Three.PerspectiveCamera( 90, window.innerWidth / window.innerHeight );
         this.camera.position.set(0, 1, 1);
-        scene.add(new Three.AmbientLight(0xFFFFFF, 1));
+        scene.add(new Three.AmbientLight(0xFFFFFF, 1.4));
 
         //Instance GLTF Loader
         const loader = new GLTFLoader();
 
         // Load GLTF Model
-        if (this.modele === "fromage") {
-          loader.load( `models/fromage/poly.glb`, function ( gltf ) {
-            let model = gltf.scene.children[0];
+        let modelName = this.modele;
+        loader.load( `models/${this.modele}/${this.modele}.glb`, function ( gltf ) {
+          let model = gltf.scene.children[0];
 
-            /**
-             * Calcule l'échelle de réference en fonction de la taille du modèle
-             * (plus le modele est gros, plus l'echelle sera basse)
-             */
-            let boundingBox = new Three.Box3().setFromObject(model);
-            let boundingBoxSize = boundingBox.getSize(new Three.Vector3()).length();
-            let scale = 1/boundingBoxSize;
-            model.userData.scale = scale;
+          /**
+           * Calcule l'échelle de réference en fonction de la taille du modèle
+           * (plus le modele est gros, plus l'echelle sera basse)
+           */
+          let boundingBox = new Three.Box3().setFromObject(model);
+          let boundingBoxSize = boundingBox.getSize(new Three.Vector3()).length();
+          let scale = 1/boundingBoxSize;
+          model.userData.scale = scale;
+          if ( modelName === "scrumaster"){
+            model.scale.set(0.8, 0.8, 0.8); // Modifie l'echelle du modèle
+            model.position.set(0,0.8,0); // Positionne modèle au 0,0,0
+          } else {
             model.scale.set(scale, scale, scale); // Modifie l'echelle du modèle
             model.position.set(0,0.6,0); // Positionne modèle au 0,0,0
+          }
 
-            scene.add(model);
-          }, undefined, function ( error ) {
-            console.error( error );
-          } );
-        } else {
-          loader.load( `models/${this.modele}/scene.gltf`, function ( gltf ) {
-            let model = gltf.scene.children[0];
+          scene.add(model);
+        }, undefined, function ( error ) {
+          console.error( error );
+        } );
 
-            /**
-             * Calcule l'échelle de réference en fonction de la taille du modèle
-             * (plus le modele est gros, plus l'echelle sera basse)
-             */
-            let boundingBox = new Three.Box3().setFromObject(model);
-            let boundingBoxSize = boundingBox.getSize(new Three.Vector3()).length();
-            let scale = 1/boundingBoxSize;
-            model.userData.scale = scale;
-            model.scale.set(scale, scale, scale); // Modifie l'echelle du modèle
-            model.position.set(0,0.6,0); // Positionne modèle au 0,0,0
-
-            scene.add(model);
-          }, undefined, function ( error ) {
-            console.error( error );
-          } );
-        }
 
         //Rendering scene
         this.renderer = new Three.WebGLRenderer({alpha: true});
